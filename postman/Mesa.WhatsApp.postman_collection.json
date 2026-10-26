@@ -1,0 +1,156 @@
+{
+  "info": {
+    "name": "MESA WhatsApp Business API",
+    "description": "Official Meta Cloud API automation for MESA outreach",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:5080" },
+    { "key": "token", "value": "" },
+    { "key": "campaignId", "value": "" },
+    { "key": "templateId", "value": "" }
+  ],
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Login",
+          "event": [{
+            "listen": "test",
+            "script": {
+              "exec": [
+                "const json = pm.response.json();",
+                "pm.collectionVariables.set('token', json.accessToken);"
+              ]
+            }
+          }],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"owner@ubnexora.local\",\n  \"password\": \"ChangeMe!Owner1\"\n}"
+            },
+            "url": "{{baseUrl}}/api/auth/login"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Webhooks",
+      "item": [
+        {
+          "name": "Verify",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/webhooks/whatsapp?hub.mode=subscribe&hub.verify_token=mesa_local_verify_token_change_me&hub.challenge=12345"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Leads",
+      "item": [
+        {
+          "name": "List leads",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": "{{baseUrl}}/api/leads"
+          }
+        },
+        {
+          "name": "Import CSV",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "body": {
+              "mode": "formdata",
+              "formdata": [{ "key": "file", "type": "file", "src": [] }]
+            },
+            "url": "{{baseUrl}}/api/leads/import"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Templates",
+      "item": [
+        {
+          "name": "List templates",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": "{{baseUrl}}/api/templates"
+          }
+        },
+        {
+          "name": "Sync from Meta",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": "{{baseUrl}}/api/templates/sync"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Campaigns",
+      "item": [
+        {
+          "name": "Create campaign",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Restaurant Wave\",\n  \"messageTemplateId\": \"{{templateId}}\",\n  \"segments\": [\"Restaurant\", \"Cafe\"],\n  \"windowStart\": \"11:00:00\",\n  \"windowEnd\": \"18:00:00\",\n  \"dailyCap\": 200,\n  \"pacingDelayMs\": 3000,\n  \"pacingJitterMs\": 1500\n}"
+            },
+            "url": "{{baseUrl}}/api/campaigns"
+          }
+        },
+        {
+          "name": "Start campaign",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": "{{baseUrl}}/api/campaigns/{{campaignId}}/start"
+          }
+        },
+        {
+          "name": "Campaign stats",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": "{{baseUrl}}/api/dashboard/campaigns/{{campaignId}}/stats"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Inbox & Demos",
+      "item": [
+        {
+          "name": "Handover inbox",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": "{{baseUrl}}/api/inbox/handover"
+          }
+        },
+        {
+          "name": "Pending demos",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": "{{baseUrl}}/api/demos/pending"
+          }
+        }
+      ]
+    }
+  ]
+}
