@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{BC5FC1F2-BD82-4133-9D85-C1B715191938}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mesa.WhatsApp.Domain", "src\Mesa.WhatsApp.Domain\Mesa.WhatsApp.Domain.csproj", "{37ACEE28-A382-4379-A2E7-63BD781A4E87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mesa.WhatsApp.Application", "src\Mesa.WhatsApp.Application\Mesa.WhatsApp.Application.csproj", "{DE1A4894-4059-40CA-8B14-4C6285441B95}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mesa.WhatsApp.Infrastructure", "src\Mesa.WhatsApp.Infrastructure\Mesa.WhatsApp.Infrastructure.csproj", "{8F8970B3-FB1C-401B-A41D-E38F89C1539C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mesa.WhatsApp.Api", "src\Mesa.WhatsApp.Api\Mesa.WhatsApp.Api.csproj", "{E730CFFB-8C4B-47FB-A858-8AD3BB06025C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{A976792D-3BB8-4229-89F4-35D7035F3A93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mesa.WhatsApp.Tests", "tests\Mesa.WhatsApp.Tests\Mesa.WhatsApp.Tests.csproj", "{13B94286-00E4-4F6C-951C-5DFA5795E6C7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{37ACEE28-A382-4379-A2E7-63BD781A4E87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37ACEE28-A382-4379-A2E7-63BD781A4E87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37ACEE28-A382-4379-A2E7-63BD781A4E87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37ACEE28-A382-4379-A2E7-63BD781A4E87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE1A4894-4059-40CA-8B14-4C6285441B95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE1A4894-4059-40CA-8B14-4C6285441B95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE1A4894-4059-40CA-8B14-4C6285441B95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE1A4894-4059-40CA-8B14-4C6285441B95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F8970B3-FB1C-401B-A41D-E38F89C1539C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F8970B3-FB1C-401B-A41D-E38F89C1539C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F8970B3-FB1C-401B-A41D-E38F89C1539C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F8970B3-FB1C-401B-A41D-E38F89C1539C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E730CFFB-8C4B-47FB-A858-8AD3BB06025C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E730CFFB-8C4B-47FB-A858-8AD3BB06025C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E730CFFB-8C4B-47FB-A858-8AD3BB06025C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E730CFFB-8C4B-47FB-A858-8AD3BB06025C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13B94286-00E4-4F6C-951C-5DFA5795E6C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13B94286-00E4-4F6C-951C-5DFA5795E6C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13B94286-00E4-4F6C-951C-5DFA5795E6C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13B94286-00E4-4F6C-951C-5DFA5795E6C7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{37ACEE28-A382-4379-A2E7-63BD781A4E87} = {BC5FC1F2-BD82-4133-9D85-C1B715191938}
+		{DE1A4894-4059-40CA-8B14-4C6285441B95} = {BC5FC1F2-BD82-4133-9D85-C1B715191938}
+		{8F8970B3-FB1C-401B-A41D-E38F89C1539C} = {BC5FC1F2-BD82-4133-9D85-C1B715191938}
+		{E730CFFB-8C4B-47FB-A858-8AD3BB06025C} = {BC5FC1F2-BD82-4133-9D85-C1B715191938}
+		{13B94286-00E4-4F6C-951C-5DFA5795E6C7} = {A976792D-3BB8-4229-89F4-35D7035F3A93}
+	EndGlobalSection
+EndGlobal
